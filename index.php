@@ -101,20 +101,45 @@
         <section id="myFaq">
             
                 <?php
+
+                
                    
                     for($i=0;$i < count($myFaq) ; $i++){
-                        echo '<div class="faq-wrapper">'; 
-                        echo '<h1>'.$myFaq[$i]['Domanda'].'</h1>';
 
                         
-                        echo '<p>'.$myFaq[$i]['Risposta'].'</p>';
+                        echo '<div class="faq-wrapper">'; 
+                        echo '<h1>'.$myFaq[$i]['Domanda'].'</h1>';
+                        // RISPOSTA
+                        $myFaqAnswer = explode('.',$myFaq[$i]['Risposta']);
+                        foreach($myFaqAnswer as $newAnswer){
+                            echo '<p>'.$newAnswer.'.'.'</p>';
+                        }
+                        
                         echo '</div>';
 
                     }  
                 ?>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+    <div class="footer-wrap">
+
+        <ul>
+            <li><a href="#">Google</a></li>
+            <li><a href="#">Tutto su Google</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+
+        <select name="lngSelect" id="lngSelect">
+            <option value="1">Italiano</option>
+            <option value="1">Inglese</option>
+        </select>
+
+
+    </div>
+
+    </footer>
 
     
 </body>
